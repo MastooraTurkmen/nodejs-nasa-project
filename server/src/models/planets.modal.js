@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path')
-const parse = require('csv-parse');
+const { parse } = require('csv-parse');
 
 const habitablePlanets = [];
 
@@ -12,7 +12,7 @@ function loadPlanetsData() {
                 columns: true,
             }))
             .on('data', (data) => {
-                if (isHabitablePlanet(data)) {
+                if (data) {
                     habitablePlanets.push(data);
                 }
             })
