@@ -4,8 +4,8 @@ import Clickable from "../components/Clickable";
 
 const Launch = props => {
   const selectorBody = useMemo(() => {
-    return props.planets?.map(planet => 
-      <option value={planet.kepler_name} key={planet.kepler_name}>{planet.kepler_name}</option>
+    return props.planets?.map(planet =>
+      <option value={planet.keplerName} key={planet.keplerName}>{planet.keplerName}</option>
     );
   }, [props.planets]);
 
@@ -19,7 +19,7 @@ const Launch = props => {
       <li>Effective stellar flux &gt; 0.36 times Earth's value and &lt; 1.11 times Earth's value</li>
     </ul>
 
-    <form onSubmit={props.submitLaunch} style={{display: "inline-grid", gridTemplateColumns: "auto auto", gridGap: "10px 20px"}}>
+    <form onSubmit={props.submitLaunch} style={{ display: "inline-grid", gridTemplateColumns: "auto auto", gridGap: "10px 20px" }}>
       <label htmlFor="launch-day">Launch Date</label>
       <input type="date" id="launch-day" name="launch-day" min={today} max="2040-12-31" defaultValue={today} />
       <label htmlFor="mission-name">Mission Name</label>
@@ -31,10 +31,10 @@ const Launch = props => {
         {selectorBody}
       </select>
       <Clickable>
-        <Button animate 
-          show={props.entered} 
-          type="submit" 
-          layer="success" 
+        <Button animate
+          show={props.entered}
+          type="submit"
+          layer="success"
           disabled={props.isPendingLaunch}>
           Launch Mission ✔
         </Button>
