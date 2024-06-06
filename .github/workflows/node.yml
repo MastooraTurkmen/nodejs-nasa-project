@@ -10,7 +10,7 @@ jobs:
       CI: true
     startegy:
       matrix:
-        node-version: [16.x, 20.x]
+        node-version: [16.x, 18.x]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
