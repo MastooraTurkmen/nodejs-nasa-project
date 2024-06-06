@@ -9,7 +9,7 @@ jobs:
     env:
       CI: true
       MONGO_URL: mongodb://localhost/nasa
-    startegy:
+    strategy:
       matrix:
         node-version: [18.x, 20.x]
         mongodb-version: ["8.4"]
