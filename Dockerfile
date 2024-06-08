@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN npm install --only=production
