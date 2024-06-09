@@ -1,4 +1,4 @@
-const API_URL = 'https://localhost:8000/v1'
+const API_URL = 'v1'
 
 // Load planets and return as JOSN.
 async function httpGetPlanets() {
