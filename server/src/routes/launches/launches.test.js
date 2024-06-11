@@ -22,7 +22,7 @@ describe('Launches API', () => {
         test('should respond with 200 success', async () => {
             const response = await request(app)
                 .get('/v1/launches')
-                .expect('Content-Type', /json/)
+                .expect('Content-Type', 'application/json; charset=utf-8') // Ensure correct Content-Type
                 .expect(200);
             expect(response.body.length).toBeGreaterThanOrEqual(0); // Ensure response is an array
         });
@@ -53,7 +53,7 @@ describe('Launches API', () => {
             const response = await request(app)
                 .post('/v1/launches')
                 .send(completeLaunchData)
-                .expect('Content-Type', /json/)
+                .expect('Content-Type', 'application/json; charset=utf-8') // Ensure correct Content-Type
                 .expect(201);
 
             const requestDate = new Date(completeLaunchData.launchDate).valueOf();
@@ -67,7 +67,7 @@ describe('Launches API', () => {
             const response = await request(app)
                 .post('/v1/launches')
                 .send(launchDataWithoutDate)
-                .expect('Content-Type', /json/)
+                .expect('Content-Type', 'application/json; charset=utf-8') // Ensure correct Content-Type
                 .expect(400);
 
             expect(response.body).toEqual({
@@ -79,7 +79,7 @@ describe('Launches API', () => {
             const response = await request(app)
                 .post('/v1/launches')
                 .send(launchDataWithInvalidDate)
-                .expect('Content-Type', /json/)
+                .expect('Content-Type', 'application/json; charset=utf-8') // Ensure correct Content-Type
                 .expect(400);
 
             expect(response.body).toEqual({
